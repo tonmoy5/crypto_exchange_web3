@@ -34,5 +34,4 @@ contract Transactons{
   function getTransactionCount() public view returns(uint256) {
     return transactionCount;
   }
-
 }
