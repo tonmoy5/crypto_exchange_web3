@@ -1,7 +1,9 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import { AiFillAlipayCircle } from 'react-icons/ai'
 import { SiEthereum } from 'react-icons/si'
 import { BsInfoCircle } from 'react-icons/bs'
+
+import { TransactionContext } from '../context/TransactionContext'
 
 
 import { Loader } from './'
@@ -21,9 +23,7 @@ const Input = ({ placeholder, name, type, value, handelChange }) => (
 
 const Welcome = () => {
 
-  const connectWallet = () => {
-
-  }
+  const { connectWallet } = useContext(TransactionContext)
 
   const handelSubmit = () => {
 
@@ -33,7 +33,7 @@ const Welcome = () => {
     <div className="flex w-full justify-center items-center">
       <div className="flex mf:flex-row flex-col items-start justify-between md:p-20 py-12 px-4">
         <div className="flex flex-1 justify-start flex-col mf:mr-10">
-          <h1 className='text-3xl sm:text-5xl text-white text-gradient py-1'>WelcomeSend Crypto <br /> accross the world</h1>
+          <h1 className='text-3xl sm:text-5xl text-white text-gradient py-1'>Welcome Send Crypto <br /> accross the world</h1>
           <p className='text-white text-left mt-5 font-light md:w-9/12 w-11/12 text-base '>
             Explore the crypto world. Buy and sell cryptocurrencies easyly on our site
           </p>
