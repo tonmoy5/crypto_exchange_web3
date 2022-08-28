@@ -23,10 +23,14 @@ const Input = ({ placeholder, name, type, value, handelChange }) => (
 
 const Welcome = () => {
 
-  const { connectWallet } = useContext(TransactionContext)
+  const { connectWallet, currentAccount, formData, sendTransaction, handelChange } = useContext(TransactionContext)
 
-  const handelSubmit = () => {
+  const handelSubmit = (e) => {
+    e.preventDefault();
+    const { addressTo, amount, keyword, message } = formData;
 
+    if (!addressTo || !amount || !keyword || !message) return;
+    sendTransaction();
   }
 
   return (
@@ -37,13 +41,15 @@ const Welcome = () => {
           <p className='text-white text-left mt-5 font-light md:w-9/12 w-11/12 text-base '>
             Explore the crypto world. Buy and sell cryptocurrencies easyly on our site
           </p>
-          <button
-            type='button'
-            onClick={connectWallet}
-            className="flex flex-row justify-center items-center my-5 bg-[#2952e3] p-3 rounded-full cursor-pointer hover:bg-[#2546bd]  "
-          >
-            <p className="text-white text-base font-semibold">Connect Wallet</p>
-          </button>
+          {!currentAccount && (
+            <button
+              type='button'
+              onClick={connectWallet}
+              className="flex flex-row justify-center items-center my-5 bg-[#2952e3] p-3 rounded-full cursor-pointer hover:bg-[#2546bd]  "
+            >
+              <p className="text-white text-base font-semibold">Connect Wallet</p>
+            </button>
+          )}
 
           <div className="grid sm:grid-cols-3 grid-cols-2 mt-10">
             <div className={`rounded-tl-2xl ${commmonStyles}`}>Reliability</div>
@@ -76,14 +82,14 @@ const Welcome = () => {
           </div>
 
           <div className="p-5 sm:w-96 w-full flex flex-col justify-start items-center blue-glassmorphism">
-            <Input placeholder="Address to" name="addressTo" type="text" handelChange={() => { }} />
-            <Input placeholder="Ammount (ETH)" name="ammount" type="number" handelChange={() => { }} />
-            <Input placeholder="Keyword (GIF)" name="keyword" type="text" handelChange={() => { }} />
-            <Input placeholder="Enter Message" name="message" type="text" handelChange={() => { }} />
+            <Input placeholder="Address to" name="addressTo" type="text" handelChange={handelChange} />
+            <Input placeholder="Ammount (ETH)" name="amount" type="number" handelChange={handelChange} />
+            <Input placeholder="Keyword (GIF)" name="keyword" type="text" handelChange={handelChange} />
+            <Input placeholder="Enter Message" name="message" type="text" handelChange={handelChange} />
             <div className='h-[1px] w-full bg-gray-400 my-2 ' />
 
             {
-              true ? (
+              false ? (
                 <Loader />
               ) : (
                 <button type="button" onClick={handelSubmit} className="
