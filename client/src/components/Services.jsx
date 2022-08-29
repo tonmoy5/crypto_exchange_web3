@@ -24,11 +24,11 @@ const Services = () => (
         <h1 className="text-white text-3xl sm:text-5xl py-2 text-gradient ">
           Services that we
           <br />
-          continue to improve
+          Are providing
         </h1>
         <p className="text-left my-2 text-white font-light md:w-9/12 w-11/12 text-base">
-          The best choice for buying and selling your crypto assets, with the
-          various super friendly services we offer
+          We are providing the best crypto currency exchange service for free and amazing
+          security services
         </p>
       </div>
 
