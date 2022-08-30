@@ -33,12 +33,18 @@ const Welcome = () => {
   }
 
   return (
-    <div className="flex min-h-full w-full justify-center items-center">
+    <div className="flex min-h-full w-full justify-center items-center" id='Home'>
       <div className="flex mf:flex-row flex-col items-center justify-between md:p-20 py-12 px-4">
         <div className="flex flex-1 justify-start flex-col mf:mr-10">
-          <h1 className='text-3xl sm:text-5xl text-white text-gradient py-1'>Welcome Send Crypto <br /> accross the world</h1>
+          <h1 className='text-3xl sm:text-5xl text-white text-gradient py-1'>
+            Welcome To BdCrypEx
+            <br />
+            Send Crypto anywhere
+          </h1>
           <p className='text-white text-left mt-5 font-light md:w-9/12 w-11/12 text-base '>
-            Explore the crypto world. Buy and sell cryptocurrencies easyly on our site
+            First crypto currency exchange in bangladesh.
+            <br />
+            Send Crypto anywhere around the world without any charges
           </p>
           {!currentAccount && (
             <button
@@ -80,7 +86,7 @@ const Welcome = () => {
             </div>
           </div>
 
-          <div className="p-5 sm:w-96 w-full flex flex-col justify-start items-center blue-glassmorphism">
+          <div className="p-5 sm:w-96 w-full flex flex-col justify-start items-center blue-glassmorphism" id='Exchange'>
             <Input placeholder="Address to" name="addressTo" type="text" handelChange={handelChange} />
             <Input placeholder="Ammount (ETH)" name="amount" type="number" handelChange={handelChange} />
             <Input placeholder="Keyword (GIF)" name="keyword" type="text" handelChange={handelChange} />

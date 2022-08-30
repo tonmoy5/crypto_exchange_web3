@@ -7,8 +7,8 @@ const CardStyle = ""
 
 const Footer = () => {
   return (
-    <div className="w-full gradient-bg-footer min-h-screen flex flex-col items-center justify-center p-5 gap-10">
-      <h1 className='text-white text-center text-5xl'>Developed By</h1>
+    <div className="w-full gradient-bg-footer min-h-screen flex flex-col items-center justify-center p-5 gap-10" id='About'>
+      <h1 className='text-white text-center text-5xl '>Developed By</h1>
       <div className="flex w-full justify-center flex-col gap-10 md:flex-row">
 
         <a href="https://tonmoy.itstorm.us/" target='_blank'>
@@ -39,7 +39,7 @@ const Footer = () => {
         <br />
         Under the supervision of
         <br />
-        <span className='text-[#29e3b8]'>Mr. Md. Ashfaqul Islam sir</span>
+        <span className='text-[#29e3b8] text-xl'>Mr. Md. Ashfaqul Islam sir</span>
         <br />
         © 2022
       </h2>
