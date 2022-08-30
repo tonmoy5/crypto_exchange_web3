@@ -22,7 +22,7 @@ const Input = ({ placeholder, name, type, value, handelChange }) => (
 
 const Welcome = () => {
 
-  const { connectWallet, currentAccount, formData, sendTransaction, handelChange } = useContext(TransactionContext)
+  const { connectWallet, currentAccount, formData, sendTransaction, handelChange, isLoading } = useContext(TransactionContext)
 
   const handelSubmit = (e) => {
     e.preventDefault();
@@ -88,7 +88,7 @@ const Welcome = () => {
             <div className='h-[1px] w-full bg-gray-400 my-2 ' />
 
             {
-              false ? (
+              isLoading ? (
                 <Loader />
               ) : (
                 <button type="button" onClick={handelSubmit} className="
